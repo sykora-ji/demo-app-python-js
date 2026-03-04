@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-time Text Analyzátor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>&#128221; Real-time Text Analyzátor</h1>
+    </header>
+
+    <main class="layout">
+      <section class="input-panel">
+        <textarea
+          id="text-input"
+          placeholder="Začněte psát nebo vložte text pro analýzu..."
+          spellcheck="false"
+        ></textarea>
+        <div class="spinner" id="spinner" aria-label="Načítám..."></div>
+      </section>
+
+      <section class="stats-panel">
+        <div class="stats-block">
+          <h2>&#128202; Statistiky</h2>
+          <ul class="stats-list">
+            <li>
+              <span class="label">Slov</span>
+              <span class="value" id="word-count">—</span>
+            </li>
+            <li>
+              <span class="label">Vět</span>
+              <span class="value" id="sentence-count">—</span>
+            </li>
+            <li>
+              <span class="label">Znaků</span>
+              <span class="value" id="char-count">—</span>
+            </li>
+            <li>
+              <span class="label">Znaků (bez mezer)</span>
+              <span class="value" id="char-no-spaces">—</span>
+            </li>
+            <li>
+              <span class="label">Průměr. délka slova</span>
+              <span class="value" id="avg-word-length">—</span>
+            </li>
+            <li>
+              <span class="label">Čas čtení</span>
+              <span class="value" id="reading-time">—</span>
+            </li>
+            <li>
+              <span class="label">Lex. diverzita</span>
+              <span class="value" id="lexical-diversity">—</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="stats-block">
+          <h2>&#128292; Top slova</h2>
+          <ul class="top-words" id="top-words">
+            <li class="placeholder">Zatím žádný text</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
