@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from analyzer import analyze
 
@@ -27,6 +29,10 @@ def analyze_text(req: AnalyzeRequest):
     return analyze(req.text)
 
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000)
+@app.get("/")
+@app.post("/")
+def index():
+    return FileResponse("/app/frontend/index.html")
+
+
+app.mount("/", StaticFiles(directory="/app/frontend"), name="static")

@@ -1,4 +1,4 @@
-const API_URL = window.API_URL || "http://localhost:8000";
+const API_URL = window.API_URL || "";
 const DEBOUNCE_MS = 500;
 
 const textarea = document.getElementById("text-input");
